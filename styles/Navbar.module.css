@@ -1,0 +1,27 @@
+.navDark {
+  background-color: var(--navbar-color) !important;
+}
+.canvasDark {
+  background-color: var(--navbar-canvas-color);
+}
+
+.clearButton {
+  background-color: transparent;
+  border: 2px solid transparent;
+  padding: 0.8rem;
+}
+.clearButton:focus {
+  border: 2px solid var(--accentColor);
+  border-style: dashed;
+}
+.navList li {
+  margin: 0.5rem 0;
+}
+.navList li a {
+  font-size: 1.4rem;
+  color: var(--lightestText) !important;
+  font-weight: 500;
+}
+.navList li a:hover {
+  color: var(--accentColor) !important;
+}

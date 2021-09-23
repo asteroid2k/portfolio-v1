@@ -1,0 +1,40 @@
+.card {
+  padding: 2.5rem;
+  text-align: center;
+  background-color: var(--lightDark);
+  max-width: 460px;
+  margin: 0 0.1rem;
+  color: var(--lighterText);
+  height: 100%;
+  /* background-color: aqua; */
+  border-radius: var(--border-radius);
+}
+
+.skillTitle {
+  color: var(--lightestText);
+  margin-bottom: 2rem;
+}
+
+.skillText {
+  color: var(--lighterText);
+  margin-bottom: 2rem;
+}
+
+.skillTiltle2 {
+  color: var(--lighterText);
+}
+.techList {
+  text-align: center;
+  color: var(--lightText);
+}
+.techList li {
+  margin: 1rem 0;
+}
+
+.techList li:before {
+  content: "▹";
+  color: var(--accentColor);
+}
+
+@media screen and (max-width: 767.98px) {
+}

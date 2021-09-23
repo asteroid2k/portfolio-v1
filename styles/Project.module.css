@@ -1,0 +1,48 @@
+.projectItem {
+  display: grid;
+  grid-auto-flow: row;
+  background-color: var(--lightDark);
+  padding: 2rem;
+  color: var(--lightText);
+  border-radius: var(--border-radius);
+  height: 100%;
+}
+
+.projectLinks {
+  text-align: right;
+}
+.projectLinks > *:first-child {
+  margin: 0 1rem;
+}
+
+.txt {
+  margin: 1.5rem 0;
+}
+.projectTitle {
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  color: var(--lightestText);
+  font-weight: 600;
+}
+.projectTitle:hover {
+  color: var(--accentColor);
+}
+.projectSummary {
+  color: var(--lighterText);
+  font-size: var(--smoller-font);
+}
+.projectTools {
+  font-size: var(--smoller-font);
+  color: var(--lightText);
+}
+.projectTools li {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 767.98px) {
+  /* .projectSummary,
+  .projectTools {
+    font-size: 1rem;
+  } */
+}
