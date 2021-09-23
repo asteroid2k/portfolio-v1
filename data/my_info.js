@@ -4,7 +4,7 @@ export const personalInfo = {
   summary:
     "I am a Full-stack developer (Backend-Heavy) based in Ghana. I design and build exceptional digital experiences with a variety of frameworks and tools. My go-to languages are Python, Javascript/TypeScript and Golang",
   linkedIn: "https://www.linkedin.com/in/ko-adusei900/",
-  mail: "ko.adusei@gmail.com",
+  mail: "ko.adusei900@gmail.com",
   twitter: "https://twitter.com/ko_adusei",
   github: "https://github.com/asteroid2k",
   resume:
