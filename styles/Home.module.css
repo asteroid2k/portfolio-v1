@@ -172,10 +172,6 @@
 
 /* FOOTER */
 
-#ShootingStars > * {
-  animation: drift 5s linear 100ms infinite forwards infinite;
-}
-
 @keyframes drift {
   0% {
     transform: translate(0, 0);

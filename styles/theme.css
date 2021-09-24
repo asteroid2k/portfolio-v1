@@ -163,7 +163,7 @@ button {
   position: relative;
 }
 .hover-anim:hover {
-  animation: hover-animation 200ms ease-in both alternate;
+  animation: hover-animation 200ms ease-in;
 }
 @keyframes hover-animation {
   0% {
