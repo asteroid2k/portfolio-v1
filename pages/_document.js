@@ -44,7 +44,11 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
+        <body
+          data-bs-spy="scroll"
+          data-bs-target="#navspy"
+          data-bs-offset="100"
+        >
           <Main />
           <NextScript />
         </body>

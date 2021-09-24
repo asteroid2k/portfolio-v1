@@ -1,12 +1,11 @@
 .card {
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: center;
   background-color: var(--lightDark);
   max-width: 460px;
   margin: 0 0.1rem;
   color: var(--lighterText);
   height: 100%;
-  /* background-color: aqua; */
   border-radius: var(--border-radius);
 }
 
@@ -34,7 +33,4 @@
 .techList li:before {
   content: "▹";
   color: var(--accentColor);
-}
-
-@media screen and (max-width: 767.98px) {
 }

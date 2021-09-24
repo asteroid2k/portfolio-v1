@@ -16,7 +16,6 @@ export default function FeaturedProject({
     <div className={`${styles.fprojectItem} ${className}`}>
       <div className={invert ? styles.imageInv : styles.image}>
         <Image
-          priority
           src={`/images/featured_projects/${img}`}
           className={`${styles.fprojectImg}`}
           layout="fill"
@@ -25,9 +24,8 @@ export default function FeaturedProject({
         />
         <div className={styles.overlay}></div>
       </div>
-      {/* <div className={styles.projectImage}></div> */}
       <div className={invert ? styles.textInv : styles.text}>
-        <h3 className={styles.fprojectTitle}>{title}</h3>
+        <h3 className={`${styles.fprojectTitle} headingL`}>{title}</h3>
         <div className={styles.fprojectSummary}>{summary}</div>
         <ul className={`${styles.toolsList} list`}>
           {tools.map((tool, index) => (

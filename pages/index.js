@@ -4,9 +4,7 @@ import Navbar from "../components/Navbar";
 import FeaturedProject from "../components/FeaturedProject";
 import SkillCard from "../components/SkillCard";
 import Project from "../components/Project";
-import Button from "../components/Button";
 import styles from "../styles/Home.module.css";
-import utilStyles from "../styles/utils.module.css";
 import { Fragment, useEffect } from "react";
 import { GitHub, Twitter, AtSign, Linkedin } from "react-feather";
 import { motion } from "framer-motion";
@@ -34,12 +32,10 @@ export default function Home({ skillsData }) {
       </header>
 
       {/* MAIN */}
-      <main className={styles.main}>
+      <main className={`${styles.main}`}>
         {/* HERO */}
-        <section className={styles.hero}>
-          <div
-            className={`${styles.heroContent} ${utilStyles.centerText} fade-in`}
-          >
+        <section className={`${styles.hero}`}>
+          <div className={`${styles.heroContent}  fade-in`}>
             <h1 className={`${styles.heroTitle} headingXXL`}>
               Software Developer + DevOps
             </h1>
@@ -60,14 +56,14 @@ export default function Home({ skillsData }) {
               bottom: 20,
             }}
             alt="Draggable Planet"
-            height="150"
-            width="150"
+            height="180"
+            width="180"
             src="/images/PlanetD.svg"
           ></motion.img>
         </section>
 
         {/* summary */}
-        <section className={`${styles.proSummary}`} id="about">
+        <section className={`section ${styles.proSummary}`} id="about">
           <div className="fade-in">
             <div className={`${styles.summaryText}`}>
               <h2 className={`${styles.hi} headingL`}>Hi, {"I'm"} Adusei</h2>
@@ -79,7 +75,6 @@ export default function Home({ skillsData }) {
               className={styles.imageContainer}
             >
               <Image
-                priority
                 src={
                   personalInfo.image
                     ? personalInfo.image
@@ -94,55 +89,62 @@ export default function Home({ skillsData }) {
           </div>
         </section>
         {/* skills */}
-        <section className={`${styles.skills}`} id="skills">
-          <h2 className={`sectionHeader headingL`}>Skills</h2>
-
-          <ul className={`${styles.skillList} list fade-in`}>
-            {skillsData.map((skill, index) => (
-              <li key={`skill-${skill}-${index}`}>
-                <SkillCard {...skill} />
-              </li>
-            ))}
-          </ul>
+        <section className={`section ${styles.skills}`} id="skills">
+          <div className="fade-in">
+            <h2 className={`sectionHeader headingXL`}>Skills</h2>
+            <ul className={`${styles.skillList} list`}>
+              {skillsData.map((skill, index) => (
+                <li key={`skill-${skill}-${index}`}>
+                  <SkillCard {...skill} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
         {/* area */}
         <div className={styles.area}>
           {/* projects */}
-          <section className={`${styles.projects}`} id="projects">
-            <h2 className={`sectionHeader headingL`}>Projects</h2>
-            <ul className={`${styles.fprojectList} list`}>
-              {featuredProjects.map((project, index) => (
-                <li key={`featuredProject-${project.title}-${index}`}>
-                  <FeaturedProject
-                    className={index % 2 == 0 ? "slide-right" : "slide-left"}
-                    invert={index % 2 == 0 ? true : null}
-                    {...project}
-                  ></FeaturedProject>
-                </li>
-              ))}
-            </ul>
+          <section className={`section ${styles.projects}`} id="projects">
+            <div className="fade-in">
+              <h2 className={`sectionHeader headingXL`}>Projects</h2>
+              <ul className={`${styles.fprojectList} list`}>
+                {featuredProjects.map((project, index) => (
+                  <li key={`featuredProject-${project.title}-${index}`}>
+                    <FeaturedProject
+                      className={index % 2 == 0 ? "slide-right" : "slide-left"}
+                      invert={index % 2 == 0 ? true : null}
+                      {...project}
+                    ></FeaturedProject>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
           {/* other projects */}
-          <section className={`${styles.otherProjects} `}>
-            <h2 className={`sectionHeader headingL fade-in`}>Other Projects</h2>
-            <ul className={`${styles.oprojectList} list fade-in`}>
-              {otherProjects.map((project, index) => (
-                <li key={`featuredProject-${project.title}-${index} fade-in`}>
-                  <Project {...project}></Project>
-                </li>
-              ))}
-            </ul>
+          <section className={`section ${styles.otherProjects}`}>
+            <div className="fade-in">
+              <h2 className={`sectionHeader headingXL `}>Other Projects</h2>
+              <ul className={`${styles.oprojectList} list`}>
+                {otherProjects.map((project, index) => (
+                  <li key={`featuredProject-${project.title}-${index}`}>
+                    <Project {...project}></Project>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
           {/* get in touch */}
-          <section className={`${styles.callToAction}`} id="contact">
+          <section className={`section ${styles.contact}`} id="contact">
             <div className="fade-in">
-              <h3 className={styles.catHeader}>Get In Touch</h3>
+              <h2 className={`sectionHeader headingXL `}>Get In Touch</h2>
               <p className={styles.catText}>
                 Want to collaborate on a new project or improve on any of mine?
-                Need help with your project? We should have a chat.
+                We should have a chat.
               </p>
               <a href={`mailto:${personalInfo.mail}`}>
-                <Button className={styles.catButton} text="Hit Me Up"></Button>
+                <button className={`${styles.catbutton} button`}>
+                  Say Hello
+                </button>
               </a>
             </div>
           </section>

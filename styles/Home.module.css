@@ -8,31 +8,29 @@
 }
 /* HERO */
 .hero {
+  padding: 0;
   position: relative;
   width: 100%;
-  /* padding-top: 10rem; */
   height: min(45rem, 100vh);
-  background-image: url("../public//images/Galaxy.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-position: center center; */
   overflow: hidden;
+  margin-bottom: 6rem;
+  background: url("../public/images/galaxy10-ani-css.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .heroContent {
   padding: 0.5rem;
   position: relative;
-  /* margin-bottom: 2rem; */
   top: 40%;
   z-index: 3;
-  /* margin: 13rem auto 1rem auto; */
   text-align: center;
-  /* background-color: rgb(170, 153, 128); */
   width: 100%;
 }
 .heroTitle {
   color: var(--lightestText);
-  text-shadow: 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.8);
 }
 .heroSubtitle {
   color: var(--lighterText);
@@ -49,15 +47,14 @@
 
 /* SUMMARY */
 .proSummary {
-  margin-top: 2rem;
   position: relative;
-  padding: 6rem var(--side-padding) 10rem var(--side-padding);
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 }
 .proSummary > div {
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 65% 35%;
-  gap: 1rem;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
 }
 .imageContainer {
@@ -73,6 +70,7 @@
 
 .summaryText {
   max-width: 65ch;
+  font-size: var(--font-md);
 }
 .hi {
   color: var(--lightestText);
@@ -86,8 +84,8 @@
 
 /* SKILLS */
 .skills {
-  padding: var(--section-padding) var(--side-padding-skills);
-  margin-top: -10rem;
+  padding-left: var(--side-padding-skills);
+  padding-right: var(--side-padding-skills);
 }
 .skillList {
   display: grid;
@@ -104,24 +102,18 @@
 /* SKILLS */
 
 /* PROJECTS */
-.projects {
-  padding: var(--section-padding) 0;
-}
+/* .projects {
+} */
 
 .fprojectList {
-  /* background-color: rgb(139, 139, 139); */
   display: grid;
   grid-auto-flow: row;
-  /* justify-items: center; */
   gap: 5rem;
 }
 
-.otherProjects {
-  padding: var(--section-padding) 0;
-}
+/* .otherProjects {
+} */
 .oprojectList {
-  /* background-color: antiquewhite;
-  padding: 1rem; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
@@ -131,16 +123,15 @@
 /* PROJECTS */
 
 /* CALL TO ACTION */
-.callToAction {
+.contact {
   margin: 0 auto;
   text-align: center;
-  padding: var(--section-padding) 0;
   max-width: 70ch;
 }
 .catHeader {
   color: var(--lightestText);
   padding-bottom: 1rem;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
   font-weight: 700;
 }
 .catText {
@@ -181,6 +172,19 @@
 
 /* FOOTER */
 
+#ShootingStars > * {
+  animation: drift 5s linear 100ms infinite forwards infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
 @media screen and (max-width: 767.98px) {
   .proSummary > div {
     grid-template-columns: auto;
@@ -189,5 +193,14 @@
     grid-template-columns: none;
     grid-auto-flow: row;
     gap: 0.5rem;
+  }
+  .fprojectList {
+    gap: 2rem;
+  }
+  .hero {
+    background-attachment: scroll;
+  }
+  .interactivePlanet {
+    display: none;
   }
 }
