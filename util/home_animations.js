@@ -1,8 +1,9 @@
 const faders = document.querySelectorAll(".fade-in");
 const slideLeft = document.querySelectorAll(".slide-left");
 const slideRight = document.querySelectorAll(".slide-right");
-
-console.log(faders);
+// const navlinks = document.querySelectorAll(".nav-link");
+// const offcanvas = document.querySelector(".offcanvas");
+// import { Offcanvas } from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const fadeInOptions = {
   //   threshold: 1,
@@ -59,3 +60,10 @@ slideLeft.forEach((element) => {
 slideRight.forEach((element) => {
   slideRightScroll.observe(element);
 });
+// navlinks.forEach((link) => {
+//   link.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     let bscanvas = Offcanvas.getInstance(offcanvas);
+//     bscanvas.toggle();
+//   });
+// });
