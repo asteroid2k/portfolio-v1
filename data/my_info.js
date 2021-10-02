@@ -49,8 +49,8 @@ export const featuredProjects = [
   {
     title: "Price-Scraper",
     summary:
-      "A Python web scraper for finding and comparing item prices from E-commerce websites (Kikuu, Jumia). Built with Selenim and Flask.",
-    tools: ["Selenium", "Python", "Flask", "Bootstrap"],
+      "A Python web scraper for finding and comparing item prices from E-commerce websites (Kikuu, Jumia). Built with Selenium and Flask.",
+    tools: ["Selenium", "Python", "Flask", "Pandas", "Bootstrap"],
     img: "price_scraper.png",
     github: "https://github.com/asteroid2k/price-scraper",
     extlink: "",

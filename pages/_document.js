@@ -31,6 +31,7 @@ class MyDocument extends Document {
             name="twitter:image"
             content="https://cloud-object-storage-3u-cos-standard-o1c.s3.eu-de.cloud-object-storage.appdomain.cloud/logo.png"
           />
+
           {/* fonts */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -47,7 +48,7 @@ class MyDocument extends Document {
         <body
           data-bs-spy="scroll"
           data-bs-target="#navspy"
-          data-bs-offset="100"
+          data-bs-offset="150"
         >
           <Main />
           <NextScript />

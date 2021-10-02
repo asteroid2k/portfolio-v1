@@ -30,36 +30,43 @@ export default function Home({ skillsData }) {
       <header>
         <Navbar resumelink={personalInfo.resume}></Navbar>
       </header>
+      <motion.button
+        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.1 }}
+        className={`${styles.darkToggler} toggler`}
+      ></motion.button>
 
       {/* MAIN */}
       <main className={`${styles.main}`}>
         {/* HERO */}
         <section className={`${styles.hero}`}>
-          <div className={`${styles.heroContent}  fade-in`}>
-            <h1 className={`${styles.heroTitle} headingXXL`}>
-              Software Developer + DevOps
-            </h1>
-            <p className={`${styles.heroSubtitle} `}>
-              I build Modern Apps for the Web & Cloud
-            </p>
-          </div>
+          <div className={styles.heroBg}>
+            <div className={`${styles.heroContent}  fade-in`}>
+              <h1 className={`${styles.heroTitle} headingXXL`}>
+                Software Developer + DevOps
+              </h1>
+              <p className={`${styles.heroSubtitle} `}>
+                I build Modern Apps for the Web & Cloud
+              </p>
+            </div>
 
-          <motion.img
-            className={`${styles.interactivePlanet}`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            drag
-            dragConstraints={{
-              top: -20,
-              left: -20,
-              right: 20,
-              bottom: 20,
-            }}
-            alt="Draggable Planet"
-            height="180"
-            width="180"
-            src="/images/PlanetD.svg"
-          ></motion.img>
+            <motion.img
+              className={`${styles.interactivePlanet}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              drag
+              dragConstraints={{
+                top: -40,
+                left: -40,
+                right: 40,
+                bottom: 40,
+              }}
+              alt="Draggable Planet"
+              height="180"
+              width="180"
+              src="/images/PlanetD.svg"
+            ></motion.img>
+          </div>
         </section>
 
         {/* summary */}
@@ -112,7 +119,7 @@ export default function Home({ skillsData }) {
                   <li key={`featuredProject-${project.title}-${index}`}>
                     <FeaturedProject
                       className={index % 2 == 0 ? "slide-right" : "slide-left"}
-                      invert={index % 2 == 0 ? true : null}
+                      invert={index % 2 == 0 ? false : true}
                       {...project}
                     ></FeaturedProject>
                   </li>

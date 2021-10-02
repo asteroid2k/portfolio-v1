@@ -1,5 +1,6 @@
 .navDark {
   background-color: var(--navbar-color);
+  box-shadow: 0 10px 10px -12px rgba(0, 0, 0, 0.6);
 }
 .canvasDark {
   background-color: var(--navbar-canvas-color);
@@ -17,6 +18,7 @@
 }
 .navCanvas {
   background-color: var(--navbar-canvas-color);
+  color: var(--textShade300);
 }
 .navAction {
   height: fit-content;
@@ -35,8 +37,8 @@
 }
 .navList li a {
   font-weight: 300;
-  font-size: var(--font-md);
-  color: var(--lightestText) !important;
+  font-size: 0.9rem;
+  color: var(--textShade300) !important;
 }
 
 @media (max-width: 767.98px) {
@@ -47,11 +49,15 @@
     display: inline-block;
   }
   .navList {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .navList li {
     width: fit-content;
-    margin: 0.5rem auto;
+    margin: 0.3rem auto;
+  }
+  .navList li a {
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   .navAction {
     margin: 0;
