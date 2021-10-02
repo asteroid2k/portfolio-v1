@@ -2,26 +2,19 @@ import Image from "next/image";
 import styles from "../styles/Project.module.css";
 import { GitHub, ExternalLink } from "react-feather";
 
-export default function Project({
-  title,
-  summary,
-  tools,
-  github,
-  extlink,
-  className,
-}) {
+export default function Project({ title, summary, tools, github, extlink }) {
   return (
-    <div className={`${styles.projectItem} hover-trans`}>
+    <div className={`${styles.projectItem} hover-anim fade-in`}>
       <div className={styles.projectTop}>
         <div className={`${styles.projectLinks}`}>
           {github ? (
             <a href={github} target="_blank" rel="noopener noreferrer">
-              <GitHub size={22} className="icon ani" />
+              <GitHub size={22} className="icon" />
             </a>
           ) : null}
           {extlink ? (
             <a href={extlink} target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={22} className="icon ani" />
+              <ExternalLink size={22} className="icon" />
             </a>
           ) : null}
         </div>

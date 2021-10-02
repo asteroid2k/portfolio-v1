@@ -1,27 +1,59 @@
 .navDark {
-  background-color: var(--navbar-color) !important;
+  background-color: var(--navbar-color);
 }
 .canvasDark {
   background-color: var(--navbar-canvas-color);
 }
+.navToggler {
+  display: none;
+}
+.navButton {
+  border: none;
+  color: var(--accentColor) !important;
+}
+.navButton:focus {
+  outline: 2px solid var(--accentColor);
+  outline-style: dashed;
+}
+.navCanvas {
+  background-color: var(--navbar-canvas-color);
+}
+.navAction {
+  height: fit-content;
+  display: inline-block;
+  border: 1px solid var(--accentColor);
+  border-radius: var(--border-radius);
+  color: var(--accentColor);
+  padding: 0.6rem 1.2rem;
+  margin-left: 2.5rem;
+  font-size: 0.9rem;
+}
 
-.clearButton {
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: 0.8rem;
-}
-.clearButton:focus {
-  border: 2px solid var(--accentColor);
-  border-style: dashed;
-}
 .navList li {
-  margin: 0.5rem 0;
+  width: fit-content;
+  margin: 0 0.5rem;
 }
 .navList li a {
-  font-size: 1.4rem;
+  font-weight: 300;
+  font-size: var(--font-md);
   color: var(--lightestText) !important;
-  font-weight: 500;
 }
-.navList li a:hover {
-  color: var(--accentColor) !important;
+
+@media (max-width: 767.98px) {
+  .navDark {
+    font-size: 1.3rem;
+  }
+  .navToggler {
+    display: inline-block;
+  }
+  .navList {
+    margin-bottom: 2rem;
+  }
+  .navList li {
+    width: fit-content;
+    margin: 0.5rem auto;
+  }
+  .navAction {
+    margin: 0;
+  }
 }
