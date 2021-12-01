@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import { Menu, Minus } from "react-feather";
 import { motion, useViewportScroll } from "framer-motion";
@@ -117,7 +116,12 @@ export default function Navbar({ resumelink }) {
                 </a>
               </li>
             </ul>
-            <a href={resumelink} className={`${styles.navAction} my-auto`}>
+            <a
+              href={resumelink}
+              className={`${styles.navAction} my-auto`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {"Resumé"}
             </a>
           </div>

@@ -26,9 +26,9 @@
   border: 1px solid var(--accentColor);
   border-radius: var(--border-radius);
   color: var(--accentColor);
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   margin-left: 2.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .navList li {

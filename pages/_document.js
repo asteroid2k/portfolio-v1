@@ -39,17 +39,12 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
-
           <link
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
             rel="stylesheet"
-          />
+          ></link>
         </Head>
-        <body
-          data-bs-spy="scroll"
-          data-bs-target="#navspy"
-          data-bs-offset="150"
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -29,7 +29,7 @@
   /* fonts */
   --headingXXL: clamp(2.5rem, 5vw, 4rem);
   --headingXL: clamp(1.6rem, 3vw, 2rem);
-  --headingL: clamp(1.3rem, 2.5vw, 1.6rem);
+  --headingL: clamp(1.4rem, 2.5vw, 1.6rem);
   --headingMd: clamp(1.1rem, 2vw, 1.2rem);
   --font-md: 0.9rem;
   --hero-text-shadow: 5px 5px rgba(0, 0, 0, 0.95);
@@ -69,7 +69,7 @@
     --textShade300: var(--lightestText);
   }
 }
-/* toggled light theme when p2k-theme attribute changes*/
+/* toggle light theme when p2k-theme attribute changes*/
 body[p2k-theme="light"] {
   --navbar-color: var(--navbar-color-light);
   --navbar-canvas-color: var(--navbar-canvas-color-light);
@@ -81,7 +81,7 @@ body[p2k-theme="light"] {
   --textShade200: var(--darkerText);
   --textShade300: var(--darkestText);
 }
-/* toggled dark theme when p2k-theme attribute changes*/
+/* toggle dark theme when p2k-theme attribute changes*/
 body[p2k-theme="dark"] {
   --navbar-color: var(--navbar-color-dark);
   --navbar-canvas-color: var(--navbar-canvas-color-dark);
@@ -106,6 +106,9 @@ body {
   padding-top: var(--section-vert-padding);
   padding-bottom: var(--section-vert-padding);
   /* background-color: bisque; */
+}
+.scroll-lock {
+  overflow-y: hidden;
 }
 
 /* links */
@@ -165,6 +168,9 @@ button {
 }
 
 /* TYPOGRAPHY */
+.h {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
 .headingXXL {
   font-size: var(--headingXXL);
   font-weight: 800;
@@ -201,7 +207,8 @@ button {
 .icon:hover {
   stroke: var(--accentColor);
   scale: 1.1;
-  transform: translateY(-0.2rem);
+  transform: translateY(-2px);
+  transition: all 100ms ease-in;
 }
 .icon:focus {
   border: 2px solid var(--accentColor);

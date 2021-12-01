@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "../styles/Project.module.css";
 import { GitHub, ExternalLink } from "react-feather";
 

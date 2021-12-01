@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import Navbar from "../components/Navbar";
+import NavbarC from "../components/NavbarC";
 import FeaturedProject from "../components/FeaturedProject";
 import SkillCard from "../components/SkillCard";
 import Project from "../components/Project";
@@ -8,14 +7,15 @@ import styles from "../styles/Home.module.css";
 import { Fragment, useEffect } from "react";
 import { GitHub, Twitter, AtSign, Linkedin } from "react-feather";
 import { motion } from "framer-motion";
-import {
-  skillsData,
+import info from "../data/my_info.json";
+import AvatarModel from "../components/AvatarModel";
+
+export default function Home({
+  skills,
   personalInfo,
   featuredProjects,
   otherProjects,
-} from "../data/my_info";
-
-export default function Home({ skillsData }) {
+}) {
   useEffect(() => {
     import("../util/home_animations");
   }, []);
@@ -28,13 +28,15 @@ export default function Home({ skillsData }) {
       </Head>
 
       <header>
-        <Navbar resumelink={personalInfo.resume}></Navbar>
+        <NavbarC resumelink={personalInfo.resume}></NavbarC>
       </header>
       <motion.button
         whileTap={{ scale: 0.9 }}
         whileHover={{ scale: 1.1 }}
         className={`${styles.darkToggler} toggler`}
-      ></motion.button>
+      >
+        <span className="sr-only">Color Scheme Toggle</span>
+      </motion.button>
 
       {/* MAIN */}
       <main className={`${styles.main}`}>
@@ -42,7 +44,7 @@ export default function Home({ skillsData }) {
         <section className={`${styles.hero}`}>
           <div className={styles.heroBg}>
             <div className={`${styles.heroContent}  fade-in`}>
-              <h1 className={`${styles.heroTitle} headingXXL`}>
+              <h1 className={`${styles.heroTitle} h headingXXL`}>
                 Software Developer + DevOps
               </h1>
               <p className={`${styles.heroSubtitle} `}>
@@ -73,34 +75,22 @@ export default function Home({ skillsData }) {
         <section className={`section ${styles.proSummary}`} id="about">
           <div className="fade-in">
             <div className={`${styles.summaryText}`}>
-              <h2 className={`${styles.hi} headingL`}>Hi, {"I'm"} Adusei</h2>
+              <h2 className={`${styles.hi} h headingL`}>Hi, {"I'm"} Adusei</h2>
               <p className={`${styles.text}`}>{personalInfo.summary}</p>
             </div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={styles.imageContainer}
-            >
-              <Image
-                src={
-                  personalInfo.image
-                    ? personalInfo.image
-                    : "/images/profile.png"
-                }
-                className={`${styles.profileImg}`}
-                height={250}
-                width={250}
-                alt={"Profile Image"}
-              />
-            </motion.div>
+            <div className={styles.imageContainer}>
+              <div id="avatarCanvas" className={styles.avatarCanvas}>
+                <AvatarModel></AvatarModel>
+              </div>
+            </div>
           </div>
         </section>
         {/* skills */}
         <section className={`section ${styles.skills}`} id="skills">
           <div className="fade-in">
-            <h2 className={`sectionHeader headingXL`}>Skills</h2>
+            <h2 className={`sectionHeader h headingXL`}>Skills</h2>
             <ul className={`${styles.skillList} list`}>
-              {skillsData.map((skill, index) => (
+              {skills.map((skill, index) => (
                 <li key={`skill-${skill}-${index}`}>
                   <SkillCard {...skill} />
                 </li>
@@ -113,7 +103,7 @@ export default function Home({ skillsData }) {
           {/* projects */}
           <section className={`section ${styles.projects}`} id="projects">
             <div className="fade-in">
-              <h2 className={`sectionHeader headingXL`}>Projects</h2>
+              <h2 className={`sectionHeader h headingXL`}>Projects</h2>
               <ul className={`${styles.fprojectList} list`}>
                 {featuredProjects.map((project, index) => (
                   <li key={`featuredProject-${project.title}-${index}`}>
@@ -130,7 +120,7 @@ export default function Home({ skillsData }) {
           {/* other projects */}
           <section className={`section ${styles.otherProjects}`}>
             <div className="fade-in">
-              <h2 className={`sectionHeader headingXL `}>Other Projects</h2>
+              <h2 className={`sectionHeader h headingXL `}>Other Projects</h2>
               <ul className={`${styles.oprojectList} list`}>
                 {otherProjects.map((project, index) => (
                   <li key={`featuredProject-${project.title}-${index}`}>
@@ -143,7 +133,7 @@ export default function Home({ skillsData }) {
           {/* get in touch */}
           <section className={`section ${styles.contact}`} id="contact">
             <div className="fade-in">
-              <h2 className={`sectionHeader headingXL `}>Get In Touch</h2>
+              <h2 className={`sectionHeader h headingXL `}>Get In Touch</h2>
               <p className={styles.catText}>
                 Want to collaborate on a new project or improve on any of mine?
                 We should have a chat.
@@ -194,7 +184,32 @@ export default function Home({ skillsData }) {
             Designed & built by Kwaku Adusei Okyere
           </p>
           <p className={styles.footerSub}>
-            Inspired by <a>Matt Farley</a> & <a>Brittany Chiang</a>
+            Inspired by{" "}
+            <a
+              href="https://mattfarley.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Matt Farley
+            </a>{" "}
+            &{" "}
+            <a
+              href="https://brittanychiang.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Brittany Chiang
+            </a>
+          </p>
+          <p className={styles.footerSub}>
+            3D model by{" "}
+            <a
+              href="https://readyplayer.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wolf 3D
+            </a>
           </p>
         </div>
       </footer>
@@ -203,10 +218,12 @@ export default function Home({ skillsData }) {
 }
 
 export async function getStaticProps() {
+  const { skills, personalInfo, featuredProjects, otherProjects } = info;
+
   return {
     props: {
       personalInfo,
-      skillsData,
+      skills,
       featuredProjects,
       otherProjects,
     },
