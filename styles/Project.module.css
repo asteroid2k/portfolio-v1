@@ -1,9 +1,9 @@
 .projectItem {
   display: grid;
   grid-auto-flow: row;
-  background-color: var(--lightDark);
+  background-color: var(--darker-background);
   padding: 2rem;
-  color: var(--lightText);
+  color: var(--textShade100);
   border-radius: var(--border-radius);
   height: 100%;
 }
@@ -21,23 +21,27 @@
 .projectTitle {
   font-size: 1.15rem;
   margin-bottom: 0.8rem;
-  color: var(--lightestText);
+  color: var(--textShade300);
   font-weight: 600;
 }
 .projectTitle:hover {
   color: var(--accentColor);
 }
 .projectSummary {
-  color: var(--lighterText);
+  color: var(--textShade200);
   font-size: var(--smoller-font);
 }
 .projectTools {
-  font-size: var(--smoller-font);
-  color: var(--lightText);
+  font-size: var(--font-md);
+  color: var(--textShade100);
 }
 .projectTools li {
   display: inline;
   margin-right: 0.5rem;
+}
+.projectTools li::before {
+  content: "•";
+  color: var(--accentColor);
 }
 
 @media screen and (max-width: 767.98px) {

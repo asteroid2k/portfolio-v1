@@ -31,6 +31,7 @@ class MyDocument extends Document {
             name="twitter:image"
             content="https://cloud-object-storage-3u-cos-standard-o1c.s3.eu-de.cloud-object-storage.appdomain.cloud/logo.png"
           />
+
           {/* fonts */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -38,17 +39,12 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
-
           <link
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
             rel="stylesheet"
-          />
+          ></link>
         </Head>
-        <body
-          data-bs-spy="scroll"
-          data-bs-target="#navspy"
-          data-bs-offset="100"
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

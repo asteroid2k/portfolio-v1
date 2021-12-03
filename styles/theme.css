@@ -4,33 +4,101 @@
   --section-vert-padding: 3rem;
   --section-header-padding: 2rem;
   --border-radius: 8px;
-
-  --navbar-color: rgba(22, 44, 82, 0.8);
-  --navbar-canvas-color: rgba(22, 44, 82, 0.95);
-  --background-color: rgb(22, 44, 80);
+  /* colors */
+  /* dark mode */
+  --background-color-dark: rgb(22, 44, 80);
+  --navbar-color-dark: rgba(22, 44, 82, 0.9);
+  --navbar-canvas-color-dark: rgba(22, 44, 82, 0.95);
+  --hero-background-color: rgb(22, 44, 80);
   --secondaryColor: #12201c;
-  --accentColor: #64ffda;
-  --lightDark: rgb(10, 32, 68);
+  --accentColor-dark: hsl(166, 100%, 70%);
+  --darkerDark: rgb(10, 32, 68);
   --lightestText: rgb(220, 230, 230);
   --lighterText: rgb(200, 220, 220);
   --lightText: rgb(168, 178, 209);
-
+  /* light mode */
+  --navbar-color-light: hsla(0, 0%, 93%, 0.9);
+  --navbar-canvas-color-light: hsla(0, 0%, 93%, 0.95);
+  --background-color-light: hsla(0, 0%, 93%, 1);
+  --accentColor-light: hsl(166, 41%, 41%);
+  --darkerLight: rgb(211, 211, 211);
+  --darkestText: rgb(0, 0, 0);
+  --darkerText: rgb(34, 34, 34);
+  --darkText: rgb(51, 51, 51);
+  --button-hover-color: hsla(166, 53%, 56%, 0.2);
+  /* fonts */
   --headingXXL: clamp(2.5rem, 5vw, 4rem);
   --headingXL: clamp(1.6rem, 3vw, 2rem);
-  --headingL: clamp(1.3rem, 2.5vw, 1.6rem);
+  --headingL: clamp(1.4rem, 2.5vw, 1.6rem);
   --headingMd: clamp(1.1rem, 2vw, 1.2rem);
-  --font-md: 0.95rem;
-  --hover-box-shadow: 6px 15px 15px -10px #000000;
+  --font-md: 0.9rem;
+  --hero-text-shadow: 5px 5px rgba(0, 0, 0, 0.95);
+  --box-shadow: 6px 15px 15px -10px #000000;
 
   --button-font-size: 1.1rem;
 
   --footer-social-icon-size: 25px;
 }
+
+/* COLOR SCHEMES */
+/* if system uses light theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --navbar-color: var(--navbar-color-light);
+    --navbar-canvas-color: var(--navbar-canvas-color-light);
+    --background-color-inverse: var(--background-color-dark);
+    --background-color: var(--background-color-light);
+    --accentColor: var(--accentColor-light);
+    --darker-background: var(--darkerLight);
+    --textShade100: var(--darkText);
+    --textShade200: var(--darkerText);
+    --textShade300: var(--darkestText);
+  }
+}
+/* if system uses dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navbar-color: var(--navbar-color-dark);
+    --navbar-canvas-color: var(--navbar-canvas-color-dark);
+    --background-color: var(--background-color-dark);
+    --background-color-inverse: var(--background-color-light);
+    --darker-background: var(--darkerDark);
+    --accentColor: var(--accentColor-dark);
+    --textShade100: var(--lightText);
+    --textShade200: var(--lighterText);
+    --textShade300: var(--lightestText);
+  }
+}
+/* toggle light theme when p2k-theme attribute changes*/
+body[p2k-theme="light"] {
+  --navbar-color: var(--navbar-color-light);
+  --navbar-canvas-color: var(--navbar-canvas-color-light);
+  --background-color-inverse: var(--background-color-dark);
+  --background-color: var(--background-color-light);
+  --accentColor: var(--accentColor-light);
+  --darker-background: var(--darkerLight);
+  --textShade100: var(--darkText);
+  --textShade200: var(--darkerText);
+  --textShade300: var(--darkestText);
+}
+/* toggle dark theme when p2k-theme attribute changes*/
+body[p2k-theme="dark"] {
+  --navbar-color: var(--navbar-color-dark);
+  --navbar-canvas-color: var(--navbar-canvas-color-dark);
+  --background-color-inverse: var(--background-color-light);
+  --background-color: var(--background-color-dark);
+  --darker-background: var(--darkerDark);
+  --accentColor: var(--accentColor-dark);
+  --textShade100: var(--lightText);
+  --textShade200: var(--lighterText);
+  --textShade300: var(--lightestText);
+}
+
 /* THEME STYLES */
 body {
   background: var(--background-color);
   overflow-x: hidden;
-  color: var(--lighterText);
+  color: var(--textShade200);
 }
 
 .section {
@@ -39,6 +107,10 @@ body {
   padding-bottom: var(--section-vert-padding);
   /* background-color: bisque; */
 }
+.scroll-lock {
+  overflow-y: hidden;
+}
+
 /* links */
 a {
   position: relative;
@@ -78,13 +150,13 @@ button {
 .button {
   background-color: transparent;
   padding: 1rem 1.5rem;
-  color: #64ffda;
+  color: var(--accentColor);
   font-size: var(--button-font-size);
   border: 2px solid var(--accentColor);
   border-radius: var(--border-radius);
 }
 .button:hover {
-  background-color: #64ffdb11;
+  background-color: var(--button-hover-color);
 }
 /* UTILITY CLASSES */
 
@@ -96,6 +168,9 @@ button {
 }
 
 /* TYPOGRAPHY */
+.h {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
 .headingXXL {
   font-size: var(--headingXXL);
   font-weight: 800;
@@ -119,23 +194,24 @@ button {
 
 .sectionHeader {
   margin-bottom: var(--section-header-padding);
-  color: var(--lightestText);
+  color: var(--textShade300);
 }
 
 /* ANIMATIONS & TRANSITIONS*/
 /* icon hover */
 .icon {
-  stroke: var(--lighterText);
+  stroke: var(--textShade200);
   transform: translateY(0);
   transition: all 100ms ease-in-out;
 }
 .icon:hover {
   stroke: var(--accentColor);
   scale: 1.1;
-  transform: translateY(-0.2rem);
+  transform: translateY(-2px);
+  transition: all 100ms ease-in;
 }
 .icon:focus {
-  border: 2px solid #64ffda;
+  border: 2px solid var(--accentColor);
   border-style: dashed;
 }
 /* link underline */
@@ -164,6 +240,7 @@ button {
 }
 .hover-anim:hover {
   animation: hover-animation 200ms ease-in;
+  animation-fill-mode: forwards;
 }
 @keyframes hover-animation {
   0% {
@@ -171,7 +248,7 @@ button {
   }
   100% {
     transform: translateY(-5px);
-    box-shadow: var(--hover-box-shadow);
+    box-shadow: var(--box-shadow);
     z-index: 5;
   }
 }
@@ -211,7 +288,11 @@ button {
 .slide-left.appear {
   transform: translate(0, 0);
 }
-
+@media screen and (max-width: 767.98px) {
+  .offcanvas {
+    height: 50vh !important;
+  }
+}
 @media screen and (min-width: 540px) {
   :root {
     --side-padding: 4rem;
