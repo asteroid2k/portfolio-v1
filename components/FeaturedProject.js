@@ -17,7 +17,7 @@ export default function FeaturedProject({
       <div className={invert ? styles.imageInv : styles.image}>
         <Image
           src={`/images/featured_projects/${img}`}
-          className={`${styles.fprojectImg}`}
+          className={`${styles.fprojectImg} min-h-[400px]`}
           layout="fill"
           objectFit="cover"
           alt={"Project Image"}

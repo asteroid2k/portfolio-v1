@@ -117,7 +117,7 @@ export default function NavbarC({ resumelink }) {
         </ul>
         <a
           href={resumelink}
-          className={`${styles.navAction} my-auto`}
+          className="k-button px-3 py-2 text-sm border"
           target="_blank"
           rel="noopener noreferrer"
         >
