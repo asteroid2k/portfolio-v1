@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "react-feather";
 import Logo from "../public/images/logo.svg";

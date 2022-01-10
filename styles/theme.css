@@ -294,7 +294,7 @@ button {
 .fade-in {
   opacity: 0;
   transform: translate(0.4rem, 0.8rem);
-  transition: all 500ms ease-in;
+  transition: all 300ms ease-in;
   transition-property: opacity, transform;
 }
 .fade-in.appear {
@@ -307,7 +307,7 @@ button {
 .slide-left,
 .slide-right {
   opacity: 0;
-  transition: all 500ms ease-in;
+  transition: all 300ms ease-in;
 }
 .slide-left.appear,
 .slide-right.appear {

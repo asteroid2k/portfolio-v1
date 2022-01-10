@@ -103,7 +103,6 @@ export default function Home({
         </section>
         {/* area */}
         <div className={styles.area}>
-          {/* projects */}
           <section className={`section ${styles.projects}`} id="projects">
             <div className="fade-in">
               <h2 className={`sectionHeader h headingXL`}>Projects</h2>
@@ -111,8 +110,8 @@ export default function Home({
                 {featuredProjects.map((project, index) => (
                   <li key={`featuredProject-${project.title}-${index}`}>
                     <FeaturedProject
-                      className={index % 2 == 0 ? "slide-right" : "slide-left"}
-                      invert={index % 2 == 0 ? false : true}
+                      className={index % 2 !== 0 ? "slide-right" : "slide-left"}
+                      invert={index % 2 !== 0 ? false : true}
                       {...project}
                     ></FeaturedProject>
                   </li>
