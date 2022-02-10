@@ -143,9 +143,6 @@ body {
   padding-bottom: var(--section-vert-padding);
   /* background-color: bisque; */
 }
-.scroll-lock {
-  overflow-y: hidden;
-}
 
 /* links */
 a {
@@ -328,6 +325,9 @@ button {
 @media screen and (max-width: 767.98px) {
   .offcanvas {
     height: 50vh !important;
+  }
+  .scroll-lock {
+    overflow-y: hidden;
   }
 }
 @media screen and (min-width: 540px) {
