@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import NavbarC from "../components/NavbarC";
 import FeaturedProject from "../components/FeaturedProject";
 import SkillCard from "../components/SkillCard";
@@ -9,7 +10,6 @@ import { GitHub, Twitter, AtSign, Linkedin } from "react-feather";
 import { motion } from "framer-motion";
 import info from "../data/my_info.json";
 import AvatarModel from "../components/AvatarModel";
-
 export default function Home({
   skills,
   personalInfo,
@@ -19,6 +19,7 @@ export default function Home({
   useEffect(() => {
     import("../util/home_animations");
   }, []);
+
   return (
     <Fragment>
       <Head>
@@ -30,12 +31,14 @@ export default function Home({
       <header>
         <NavbarC resumelink={personalInfo.resume}></NavbarC>
       </header>
+
       <motion.button
         whileTap={{ scale: 0.9 }}
         whileHover={{ scale: 1.1 }}
         className={`${styles.darkToggler} toggler`}
       >
-        <span className="sr-only">Color Scheme Toggle</span>
+        <span className="sr-only">Color Scheme Toggler</span>
+        <span className="toggler-icon"></span>
       </motion.button>
 
       {/* MAIN */}
@@ -75,7 +78,7 @@ export default function Home({
         <section className={`section ${styles.proSummary}`} id="about">
           <div className="fade-in">
             <div className={`${styles.summaryText}`}>
-              <h2 className={`${styles.hi} h headingL`}>Hi, {"I'm"} Adusei</h2>
+              <h2 className={`${styles.hi} h headingXL`}>Hi, {"I'm"} Adusei</h2>
               <p className={`${styles.text}`}>{personalInfo.summary}</p>
             </div>
             <div className={styles.imageContainer}>
@@ -100,7 +103,6 @@ export default function Home({
         </section>
         {/* area */}
         <div className={styles.area}>
-          {/* projects */}
           <section className={`section ${styles.projects}`} id="projects">
             <div className="fade-in">
               <h2 className={`sectionHeader h headingXL`}>Projects</h2>
@@ -108,8 +110,8 @@ export default function Home({
                 {featuredProjects.map((project, index) => (
                   <li key={`featuredProject-${project.title}-${index}`}>
                     <FeaturedProject
-                      className={index % 2 == 0 ? "slide-right" : "slide-left"}
-                      invert={index % 2 == 0 ? false : true}
+                      className={index % 2 !== 0 ? "slide-right" : "slide-left"}
+                      invert={index % 2 !== 0 ? false : true}
                       {...project}
                     ></FeaturedProject>
                   </li>
@@ -138,11 +140,9 @@ export default function Home({
                 Want to collaborate on a new project or improve on any of mine?
                 We should have a chat.
               </p>
-              <a href={`mailto:${personalInfo.mail}`}>
-                <button className={`${styles.catbutton} button`}>
-                  Say Hello
-                </button>
-              </a>
+              <Link href="/contact" passHref>
+                <button className="k-button">Say Hello</button>
+              </Link>
             </div>
           </section>
         </div>

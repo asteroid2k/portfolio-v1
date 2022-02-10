@@ -9,7 +9,7 @@ export default function Navbar({ resumelink }) {
 
   useEffect(() => {
     // call autoHide on scroll
-    // scrollY.onChange(() => autoHide());
+    scrollY.onChange(() => autoHide());
   });
 
   // hide navbar on scroll down, show nav on scroll up
@@ -20,7 +20,7 @@ export default function Navbar({ resumelink }) {
       setHidden(true);
     }
   }
-  // show/hide animation propeties
+  // show/hide animation properties
   const variants = {
     visible: { y: 0 },
     hidden: { y: -100 },

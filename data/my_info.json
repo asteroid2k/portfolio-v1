@@ -46,6 +46,18 @@
     ],
     "featuredProjects": [
         {
+            "title": "Design Challenges",
+            "summary": "Collection of random UI design challenges. Implemented challenges from Frontend Mentor, Figma Community etc",
+            "tools": [
+                "Vue.js",
+                "Tailwind CSS",
+                "Vite"
+            ],
+            "img": "design_challenges.png",
+            "github": "https://github.com/asteroid2k/ui-challenges",
+            "extlink": "https://design-challenges2k.netlify.app/"
+        },
+        {
             "title": "Iriz",
             "summary": "Robust Attendance system for schools and organizations, utilizing Face Recognition with real-time interactive dashboard and RESTful backend.",
             "tools": [

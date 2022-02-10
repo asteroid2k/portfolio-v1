@@ -56,8 +56,11 @@
   text-shadow: var(--hero-text-shadow);
 }
 .heroSubtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: Inter;
+  text-shadow: 2px 2px black;
 }
 .interactivePlanet {
   position: relative;
