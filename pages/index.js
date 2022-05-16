@@ -140,7 +140,7 @@ export default function Home({
                 Want to collaborate on a new project or improve on any of mine?
                 We should have a chat.
               </p>
-              <Link href="/contact" passHref>
+              <Link href="mailto:ko.adusei900@gmail.com" passHref>
                 <button className="k-button">Say Hello</button>
               </Link>
             </div>
