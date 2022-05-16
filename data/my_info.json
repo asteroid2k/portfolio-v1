@@ -18,7 +18,7 @@
                 "Svelte",
                 "HTML/CSS",
                 "Tailwindcss",
-                "Figma"
+                "Jest"
             ]
         },
         {
@@ -26,10 +26,11 @@
             "text": "I plan and implement database architecture and logic that feed awesome UIs with data.",
             "tech": [
                 "Django Rest Framework",
-                "Node.js",
-                "Express",
+                "Node/Express",
                 "Go Fiber",
                 "MongoDB",
+                "Postgres",
+                "Mocha & Chai",
                 "Apache/Nginx"
             ]
         },
@@ -40,11 +41,23 @@
                 "Docker",
                 "Microsoft Azure",
                 "Git/Github",
+                "Github Actions",
                 "Linux"
             ]
         }
     ],
     "featuredProjects": [
+        {
+            "title": "Academy Portal",
+            "summary": "Portal for academy applicants and management of applications and assessments.",
+            "tools": [
+                "Vue.js",
+                "Tailwind CSS",
+                "Express"
+            ],
+            "img": "academy_portal.png",
+            "github": "https://github.com/asteroid2k/academy-portal"
+        },
         {
             "title": "Design Challenges",
             "summary": "Collection of random UI design challenges. Implemented challenges from Frontend Mentor, Figma Community etc",
