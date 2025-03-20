@@ -5,7 +5,7 @@
         "mail": "ko.adusei900@gmail.com",
         "twitter": "https://twitter.com/ko_adusei",
         "github": "https://github.com/asteroid2k",
-        "resume": "https://cloud-object-storage-3u-cos-standard-o1c.s3.eu-de.cloud-object-storage.appdomain.cloud/kwaku_adusei_resume_dev.pdf",
+        "resume": "https://docs.google.com/document/d/e/2PACX-1vQwWhjrV2uho8C3Lrhr4ujjhE01lTwhq-dVFRr8k_I_5JJa0j898mMMHT-uINdYQjvxBxIcr6vuU_b4/pub",
         "image": ""
     },
     "skills": [
@@ -15,23 +15,21 @@
             "tech": [
                 "React",
                 "Next.js",
-                "Svelte",
-                "HTML/CSS",
+                "Vue",
+                "Nuxtjs",
                 "Tailwindcss",
-                "Jest"
             ]
         },
         {
             "skill": "Backend",
             "text": "I plan and implement database architecture and logic that feed awesome UIs with data.",
             "tech": [
-                "Django Rest Framework",
+                "FastApi",
+                "Nestjs",
                 "Node/Express",
-                "Go Fiber",
+                "Golang",
                 "MongoDB",
-                "Postgres",
-                "Mocha & Chai",
-                "Apache/Nginx"
+                "Postgres"
             ]
         },
         {
@@ -39,10 +37,7 @@
             "text": "I deploy, test and manage cloud services & infrastructure and applications.",
             "tech": [
                 "Docker",
-                "Microsoft Azure",
-                "Git/Github",
-                "Github Actions",
-                "Linux"
+                "AWS",
             ]
         }
     ],
